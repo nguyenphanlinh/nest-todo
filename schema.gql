@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TodoResponse {
+  todoId: String
+  todoName: String
+  total: Float
+}
+
+type TodoMutationResponse {
+  data: TodoResponse
+  error: String
+  status: Boolean!
+}
+
+type Query {
+  todos: [TodoResponse!]!
+  todo(todoId: String!): TodoResponse
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): TodoMutationResponse!
+  updateTodo(updateTodoInput: UpdateTodoInput!): TodoMutationResponse!
+  removeTodo(todoId: String!): TodoMutationResponse!
+}
+
+input CreateTodoInput {
+  todoName: String!
+}
+
+input UpdateTodoInput {
+  todoName: String
+  todoId: String!
+}
